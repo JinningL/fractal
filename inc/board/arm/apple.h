@@ -19,10 +19,10 @@ BEGIN_C_HEADER
 #include <virt_mem.h>
 #include <io/pci.h>
 
-// Apple M4:
+// Real Apple Silicon hardware:
 #ifdef APPLE_SOC_MODE_REALHW
 #define SERIAL_PORT AppleUART
-#define SERIAL_BASEADDR KERN_P2V(0x3AD200000)
+#define SERIAL_BASEADDR KERN_P2V(APPLE_SERIAL_BASEADDR)
 #endif // APPLE_SOC_MODE_REALHW
 
 // VMAPPLE (Virtualization.framework VMs):

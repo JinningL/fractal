@@ -9,3 +9,5 @@ toolchain/build
 toolchain/src
 .cache
 compile_commands.json
+m1n1
+scripts/boot-m2.sh

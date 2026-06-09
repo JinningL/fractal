@@ -9,7 +9,7 @@
 #error "Compiling apple/soc.h for a non-Apple board"
 #endif
 
-#if !defined(SOC_M1) && !defined(SOC_M4) && !defined(SOC_VMAPPLE)
+#if !defined(SOC_M1) && !defined(SOC_M2) && !defined(SOC_M4) && !defined(SOC_VMAPPLE)
 #error "When compiling for an Apple platform, you need to specify SOC=$(KIND)"
 #endif
 
@@ -20,6 +20,14 @@
 #define APPLE_WDT_BASEADDR    0x23D2B0000ull
 #define BOARD_NAME "apple-m1"
 #endif // SOC_M1
+
+// M2 Mac Mini:
+#ifdef SOC_M2
+#define APPLE_SOC_MODE_REALHW
+#define APPLE_SERIAL_BASEADDR 0x235200000ull
+#define APPLE_WDT_BASEADDR    0x23D2B0000ull
+#define BOARD_NAME "apple-m2"
+#endif // SOC_M2
 
 // M4 Mac Mini:
 #ifdef SOC_M4

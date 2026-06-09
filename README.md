@@ -141,7 +141,7 @@ kernel image with an intermediate object file.
 
 - Build Fractal to run in Qemu for all supported architectures: `make BOARD=QEMU`
 - Build Fractal for Raspberry Pi: `make BOARD=RASPI`
-- Build Fractal for an Apple M1 Mac: `make BOARD=APPLE SOC=M1`
+- Build Fractal for an Apple M2 Mac: `make BOARD=APPLE SOC=M2`
 - Build `x86_64` Fractal for debugging in Qemu: `make BOARD=QEMU VARIANT=DEBUG x86`
 - Run a parallel build (makes building faster): add `-j` to the `make` invocation. Eg: `make -j BOARD=QEMU arm`
 - Clean the build folder: `make clean`
@@ -150,7 +150,7 @@ kernel image with an intermediate object file.
 We support the following boards:
 - `QEMU`: This board compiles a kernel image suitable for running in a Qemu VM. This can include support for VirtIO graphics and HID input devices, along with detecting ramdisks where Qemu places them.
 - `RASPI`: A Raspberry Pi 4B device. The `fractal.release.raspi.arm.img` file can be directly copied and installed onto a Raspberry Pi.
-- `APPLE`: An Apple Silicon Mac. Currently we support three flavors of Apple Silicon, differentiated using the `SOC` argument: `M1`, `M4`, and `VMAPPLE`.
+- `APPLE`: An Apple Silicon Mac. Currently we support four flavors of Apple Silicon, differentiated using the `SOC` argument: `M1`, `M2`, `M4`, and `VMAPPLE`.
 - We also support GRUB-based `x86_64` PCs, reusing the `QEMU` board for `x86` installed into a GRUB rescue image (more info below).
 
 ### Apple Silicon
@@ -159,6 +159,7 @@ We support the following kinds of Apple Silicon devices (specified with
 `SOC=$(SOC)`):
 
 - `M1` for M1 Mac Minis
+- `M2` for M2 Mac Minis
 - `M4` for M4 Mac Minis
 - `VMAPPLE` for `vma2` Virtualization.framework VMs (assumed to have a PL011 serial port instead of the Samsung / Apple one on real Macs)
 
